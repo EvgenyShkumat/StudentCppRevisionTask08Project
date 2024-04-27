@@ -1,5 +1,4 @@
-﻿#include "tasks.h"
-
+﻿
 /*	Task 02. Min Number [наименьшее число]
  *
  *	Даны четыре целых числа. Определите наименьшее число.
@@ -21,5 +20,8 @@
  */
 
 int task02(int a, int b, int c, int d) {
-	return 0;
+	int min = a < b ? a : b;
+	min = c < min ? c : min;
+	min = d < min ? d : min;
+	return min;
 }
