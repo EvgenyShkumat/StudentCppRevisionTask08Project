@@ -26,5 +26,15 @@
  */
 
 string task03(int a, int b, int c) {
-	return "";
+	int max, min, mid;
+	
+	max = a > b ? a : b;
+	max = c > max ? c : max;
+
+	min = a < b ? a : b;
+	min = c < min ? c : min;
+
+	mid = (a >= b && a <= c) || (a >= c && a <= b) ? a : ((b >= c && b <= a) || (b >= a && b <= c) ? b : c);
+
+	return to_string(min) + " " + to_string(mid) + " " + to_string(max);
 }
