@@ -22,7 +22,7 @@
  *
  *	[ input 1]: 23 52 8 43
  *	[output 1]: 8
- *
+ *				n  m x  y
  *	[ input 2]: 14 7 6 11
  *	[output 2]: 1
  *
@@ -40,5 +40,16 @@
  */
 
 int task04(int n, int m, int x, int y) {
-	return -1;
+	if (m > n) {
+		swap(n, m);
+	}
+
+	if (m < 1 || n < 1 || x < 0 || y < 0 || y > n || x > m) {
+		return -1;
+	}
+
+	int x_distance = m - x < x ? m - x : x;
+	int y_distance = n - y < y ? n - y : y;
+
+	return x_distance > y_distance ? y_distance : x_distance;
 }
